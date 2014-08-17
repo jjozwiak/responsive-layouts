@@ -1,0 +1,98 @@
+//////////////////////////////
+// Set legacy support
+//
+// If you need support for IE6 or IE7, you should install the Box Sizing polyfill.
+// In your project's folder from the command line, type the following:
+// compass install singularitygs/box-sizing
+//////////////////////////////
+$legacy-support-for-ie6:     false;
+$legacy-support-for-ie7:     false;
+$legacy-support-for-mozilla: false;
+
+//////////////////////////////
+// Import Base
+//////////////////////////////
+@import "partials/base";
+
+$grids: 4;
+$grids: add-grid(6 at 30em);
+$grids: add-grid(9 at 40em);
+$grids: add-grid(12 at 50em);
+
+/*$grids: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+$gutters: 20px;*/
+
+#container {
+	@include background-grid;
+
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#content {
+	@include grid-span(4, 1);
+	background: gray;
+	@include breakpoint(30em){
+		@include grid-span(4, 3);
+	}
+	@include breakpoint(40em){
+		@include grid-span(6, 4);
+	}
+	@include breakpoint(50em){
+		@include grid-span(8, 5);
+	}
+/*	.content-col-left {
+		background: white;
+		@include breakpoint(30em){
+			@include grid-span(4, 3);
+		}
+		@include breakpoint(40em){
+			@include grid-span(6, 4);
+		}
+		@include breakpoint(50em){
+			@include grid-span(4, 5);
+		}
+	}
+	.content-col-right {
+		background: white;
+		@include breakpoint(50em){
+			@include grid-span(4, 5);
+		}
+	}*/
+}
+	.content-col-left {
+		background: white;
+		@include layout(8) {
+			@include breakpoint(50em){
+				@include grid-span(4, 1);
+			}
+		}
+		
+	}
+	.content-col-right {
+		background: white;
+		@include layout(8) {
+			@include breakpoint(50em){
+				@include grid-span(4, 5);
+			}
+		}
+	}
+
+#left-sidebar {
+	@include grid-span(4, 1);
+	background: green;
+	@include breakpoint(30em){
+		@include grid-span(2, 1);
+	}
+	@include breakpoint(40em){
+		@include grid-span(3, 1);
+	}
+	@include breakpoint(50em){
+		@include grid-span(4, 1);
+	}
+}
+
+footer {
+	width: 100%;
+	clear: both;
+}
