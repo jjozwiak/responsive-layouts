@@ -1,0 +1,115 @@
+@import 'susy';
+@import 'breakpoint';
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: 1/4,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+#main-menu {
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      padding: 0 1em 0 0;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  @include breakpoint(600px) {
+    ul {
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+#container {
+  @include container(100%);
+  max-width: 1200px;
+}
+footer {
+  @include container(100%);
+  @include break;
+}
+
+@include susy-breakpoint(500px, 12) {
+  #content {
+    @include span(8);
+  }
+  aside {
+    @include span(4 at 9);
+  }
+  .footer-col1 {
+    @include span(4);
+  }
+  .footer-col2 {
+    @include span(4 at 5);
+  }
+  .footer-col3 {
+    @include span(4 at 9);
+  }
+}
+.section1 {
+  @include susy-breakpoint(800px, 12) {
+    .col1 {
+      @include span(4);
+    }
+    .col2 {
+      @include span(4 at 5);
+    }
+    .col3 {
+      @include span(4 at 9);
+    }
+  }
+}
+
+.section2 {
+  @include susy-breakpoint(800px, 12) {
+    .col1 {
+      @include span(6);
+    }
+    .col2 {
+      @include span(6 at 7);
+    }
+  }
+}
+
+
+
+@include susy-breakpoint(1200px, 12) {
+  #content {
+    @include span(9);
+  }
+  aside {
+    @include span(3 at 10);
+  }
+}

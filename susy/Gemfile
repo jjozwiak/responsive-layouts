@@ -1,0 +1,27 @@
+source 'https://rubygems.org'
+
+group :development do
+
+  # Sass, Compass and extensions.
+
+  gem 'sass'                        # Sass.
+  gem 'sass-globbing'               # Imports via globbing pattern.
+  gem 'compass', '= 1.0.0.alpha.19' # Framework built on Sass.
+  gem 'compass-validator'           # So you can `compass validate`.
+  gem 'compass-normalize'           # Compass version of normalize.css.
+  gem 'compass-rgbapng'             # rgba() > .png's for compatibility.
+  gem 'susy', ">=2.0"               # Susy grid framework.
+  gem 'toolkit', '~>2.0'            # Compass utility by Snugug.
+  gem 'breakpoint'                  # Manages CSS media queries.
+  gem 'oily_png'                    # Faster Compass sprite generation.
+  gem 'css_parser'                  # Helps `compass stats`.
+
+
+  # Dependency to prevent polling. Setup for multiple OS environments.
+  # Optionally remove the lines not specific to your OS.
+  # https://github.com/guard/guard#efficient-filesystem-handling
+  gem 'rb-inotify', '~> 0.9', :require => false      # Linux
+  gem 'rb-fsevent', :require => false                # Mac OSX
+  gem 'rb-fchange', :require => false                # Windows
+
+end

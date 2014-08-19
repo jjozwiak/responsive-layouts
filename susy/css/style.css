@@ -1,0 +1,132 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#main-menu ul {
+  padding: 0;
+}
+#main-menu ul li {
+  list-style: none;
+  padding: 0 1em 0 0;
+}
+#main-menu ul li a {
+  text-decoration: none;
+}
+@media (min-width: 600px) {
+  #main-menu ul li {
+    display: inline-block;
+  }
+}
+
+#container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
+  background-size: 8.47458%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  max-width: 1200px;
+}
+#container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+footer {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
+  background-size: 8.47458%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  clear: both;
+}
+footer:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+@media (min-width: 500px) {
+  #content {
+    width: 66.10169%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  aside {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .footer-col1 {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .footer-col2 {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .footer-col3 {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 800px) {
+  .section1 .col1 {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  .section1 .col2 {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  .section1 .col3 {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .section2 .col1 {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  .section2 .col2 {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #content {
+    width: 74.57627%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  aside {
+    width: 23.72881%;
+    float: right;
+    margin-right: 0;
+  }
+}
